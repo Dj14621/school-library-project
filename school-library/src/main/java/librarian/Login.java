@@ -1,9 +1,5 @@
 package librarian;
 
-import members.Member;
-import members.Staff;
-import members.Student;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Login {
@@ -31,9 +27,16 @@ public class Login {
                 Option 1. Pickup a book
                 Option 2. Return a book
                 Option 3. Pay late fees
-                Option 4. Exit
+                Option 4. sort by keys
+                Option 5. Exit
                  """);
         return input.nextInt();
+    }
+    public int displayMenu() {
+        Scanner in = new Scanner(System.in);
+        System.out.println ( "1) Option 1\n2) Option 2\n3) Option 3" );
+        System.out.print ( "Selection: " );
+        return in.nextInt();
     }
 
 }

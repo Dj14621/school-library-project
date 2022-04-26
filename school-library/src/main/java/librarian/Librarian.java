@@ -1,19 +1,22 @@
 package librarian;
 
+import com.sun.jdi.Value;
+
+import java.security.Key;
 import java.util.*;
 
 
 
 public class Librarian {
     //fields
-    private String userID;
+    private String userId;
     private String password;
 
     //Constructor
 
 
     public Librarian(String userID, String password) {
-        this.userID = userID;
+        this.userId = userID;
         this.password = password;
     }
 
@@ -23,12 +26,13 @@ public class Librarian {
 
     //Getters and setters
 
-    public String getUserID() {
-        return userID;
+
+    public String getMemberId() {
+        return userId;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setMemberId(String memberId) {
+        this.userId = memberId;
     }
 
     public String getPassword() {
@@ -58,40 +62,25 @@ public class Librarian {
         return sum;
     }
 
-    public static void sortByKey () {
+    public static boolean sortByKey () {
         Map<String, String> inventory = new HashMap<>();
-        ArrayList<String> sortedKeys = new ArrayList<String>(inventory.keySet());
-        inventory.put("Dictionary1", "kdjew");
-        inventory.put("Dictionary2", "ksjhw");
-        inventory.put("Magazine1", "jxndge");
-        inventory.put("Storybook 1", "nxmke");
-        inventory.put("Dictionary3", "lsnje");
-        inventory.put("Magazine2", "lsnje");
-        inventory.put("Storybook2", "lsnje");
-        inventory.put("Magazine3", "lsnje");
-        inventory.put("Storybook3", "lsnje");
-        inventory.put("Magazine4", "lsnje");
+       ArrayList<String> sortedKeys = new ArrayList<String>(inventory.keySet());
+//        inventory.put("Dictionary1", "English to English");
+//        inventory.put("Dictionary2", "English to Spanish");
+//        inventory.put("Magazine1", "beauty");
+//        inventory.put("Storybook 1", "Djurdjura landscape");
+//        inventory.put("Dictionary3", "English to Arabic");
+//        inventory.put("Magazine2", "Health");
+//        inventory.put("Storybook2", "Dinosaur World");
+//        inventory.put("Magazine3", "Sport");
+//        inventory.put("Storybook3", "The club");
+//        inventory.put("Magazine4", "Travel");
+//
         Collections.sort(sortedKeys);
         for (String X : sortedKeys)
             System.out.println("Key = " + X + ", Value = " + inventory.get(X));
+        return sortByKey();
     }
-   // public static void main(String[] args){
-//           int sum=0;
-//
-//           Map<String, String> invent = new HashMap<>();
-//           invent.put("Jayant", "kdjew");
-//           invent.put("Abhishek", "ksjhw");
-//           invent.put("Anushka", "jxndge");
-//           invent.put("Amit", "nxmke");
-//           invent.put("Danish", "lsnje");
-//
-//           System.out.println(invent);
-//           for (int i=0; i<invent.size();i++){
-//               sum=sum+1;
-//           }
-//        System.out.println("The total books are : "+sum);
-       //}
-
 
 
     //ToString
@@ -99,12 +88,9 @@ public class Librarian {
 
     @Override
     public String toString() {
-
         return "Librarian{" +
-                "userID='" + userID + '\'' +
+                "userID='" + userId + '\'' +
                 ", password='" + password + '\'' +
                 '}';
-
     }
-
 }

@@ -1,8 +1,10 @@
 package members;
 
-public class Member {
+import interfaces.SchoolLogo;
+
+public class Member implements SchoolLogo {
     //Fields
-    private String memberId;
+    private String userId;
     private String firstName;
     private String lastName;
     private Integer yearOfBirth;
@@ -13,7 +15,7 @@ public class Member {
     }
 
     public Member(String memberId, String firstName, String lastName, Integer yearOfBirth) {
-        this.memberId = memberId;
+        this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.yearOfBirth = yearOfBirth;
@@ -21,12 +23,13 @@ public class Member {
 
     //Getters and setters
 
-    public String getMemberId() {
-        return memberId;
+
+    public String getUserId() {
+        return userId;
     }
 
-    public void setMemberId(String memberId) {
-        this.memberId = memberId;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getFirstName() {
@@ -64,10 +67,22 @@ public class Member {
     @Override
     public String toString() {
         return "Member{" +
-                "memberId='" + memberId + '\'' +
+                "memberId='" + userId + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", yearOfBirth=" + yearOfBirth +
                 '}';
+    }
+
+    @Override
+    public String deerLogo() {
+        System.out.println("Logo: DeerLogo");
+        return null;
+    }
+
+    @Override
+    public String color() {
+        System.out.println("Color: Brown");
+        return null;
     }
 }
